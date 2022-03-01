@@ -26,6 +26,7 @@ const getApod = (selectedDate) =>{
     response.json().then((data)=>{
         $(".loading").css('display','none')
         if(response.status == 200) {
+          $('.error-message').css('display','none');
           populateData(data)
         }else{
           showError(data)
